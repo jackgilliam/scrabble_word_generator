@@ -2,53 +2,109 @@
 #include "Console_IO_Utility.h"
 
 //const
-const BOARD_SIZE = 224;
+const int BOARD_SIZE = 224;
 
 //prototypes
 int getPieceValue (char letter);
+bool isInArray (char letter, char arr[]);
 
 int main()
 
 {
     //initilize variables
-    char finalValue, userLetter;
+    int finalValue;
+    char userLetter;
 
-    userLetter = getChar("please enter your letter:");
+    userLetter = promptForCharacter("please enter your letter:");
     finalValue = getPieceValue( userLetter );
+    printf("the final value is: %d", finalValue);
 
-    return finalValue;
+    return "program over";
 }
 
 int getPieceValue (char letter)
 {
-    const int oneScore=10, twoScore=1, threeScore=4, fourScore=5, fiveScore=1, eightScore=2, tenScore=2;
-    char onePoints[oneScore] = {'A', 'E', 'I', 'L', 'N', 'O', 'R', 'S', 'T', 'U'};
-    char twoPoints[twoScore] = 'D';
-    char threePoints[threeScore] = {'B', 'C', 'M', 'P'};
-    char fourPoints[fourScore] = {'F', 'H', 'V', 'W', 'Y'};
-    char fivePoints[fiveScore] = 'K';
-    char eightPoints[eightScore] = {'J', 'X'};
-    char tenPoints[tenScore] = {'Q', 'Z'};
 
-    char* letterArr[] = {onePoints, twoPoints, threePoints, fourPoints, fivePoints, eightPoints, tenPoints};
+    char alpha1[] = {'A', 'E', 'I', 'L', 'N', 'O', 'R', 'S', 'T', 'U'};
+    char alpha2[] = {'D'};
+    char alpha3[] = {'B', 'C', 'M', 'P'};
+    char alpha4[] = {'F', 'H', 'V', 'W', 'Y'};
+    char alpha5[] = {'K'};
+    char alpha8[] = {'J', 'X'};
+    char alpha10[] = {'Q', 'Z'};
 
-    int* letterArrSizes[] = {oneScore, twoScore, threeScore, fourScore, fiveScore, eightScore, tenScore};
-
-    int index;
-    for(index = 0; index < 7; index++)
+    // checks if letter is in the alpha1 array 
+    //      returns point value (1)
+    for (int index = 0; index < 9; index++)
     {
-        int index2;
-        for(index2 = 0; index2 < letterArrSizes[index]; index2++)
+        if (alpha1[index] == letter)
         {
-            if(letter == letterArr[index][index2])
-            {
-                return index;
-            }
+            return 1;
+        }
+    }
+    
+    // checks if letter is in the alpha2 array 
+    //      returns point value (2)
+    for (int index = 0; index < 1; index++)
+    {
+        if (alpha2[index] == letter)
+        {
+            return 2;
+        }
+    }
+
+    // checks if letter is in the alpha3 array 
+    //      returns point value (3)
+    for (int index = 0; index < 4; index++)
+    {
+        if (alpha3[index] == letter)
+        {
+            return 3;
+        }
+    }
+    
+    // checks if letter is in the alpha4 array 
+    //      returns point value (4)
+    for (int index = 0; index < 5; index++)
+    {
+        if (alpha4[index] == letter)
+        {
+            return 4;
+        }
+    }
+
+    // checks if letter is in the alpha5 array 
+    //      returns point value (5)
+    for (int index = 0; index < 1; index++)
+    {
+        if (alpha5[index] == letter)
+        {
+            return 5;
+        }
+    }
+
+    // checks if letter is in the alpha8 array 
+    //      returns point value (8)
+    for (int index = 0; index < 2; index++)
+    {
+        if (alpha8[index] == letter)
+        {
+            return 8;
+        }
+    }
+    
+    // checks if letter is in the alpha10 array 
+    //      returns point value (10)
+    for (int index = 0; index < 2; index++)
+    {
+        if (alpha10[index] == letter)
+        {
+            return 10;
         }
     }
 
 
-    
-    
-    
+
+ return 0;
+
 }
