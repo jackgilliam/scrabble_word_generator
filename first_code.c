@@ -6,7 +6,6 @@ const int BOARD_SIZE = 224;
 
 //prototypes
 int getPieceValue (char letter);
-bool isInArray (char letter, char arr[]);
 
 int main()
 
@@ -19,7 +18,7 @@ int main()
     finalValue = getPieceValue( userLetter );
     printf("the final value is: %d", finalValue);
 
-    return "program over";
+    return 0;
 }
 
 int getPieceValue (char letter)
