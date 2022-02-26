@@ -6,7 +6,6 @@ const int BOARD_SIZE = 224;
 
 //prototypes
 int getPieceValue (char letter);
-bool isInArray (char letter, char arr[]);
 
 int main()
 
@@ -19,7 +18,7 @@ int main()
     finalValue = getPieceValue( userLetter );
     printf("the final value is: %d", finalValue);
 
-    return "program over";
+    return 0;
 }
 
 int getPieceValue (char letter)
@@ -108,3 +107,27 @@ int getPieceValue (char letter)
  return 0;
 
 }
+
+
+/*
+/
+TODO:
+- set rules 
+- add total word score function
+- create board function
+- set bonus squares
+- track amount of tiles/left
+- tell braden what to do
+- display scrabble board
+- set images for empty bonus squares
+- generate random tiles 
+- 
+
+
+- 
+- dictionary 
+- list possible letters/combos that are playable
+- find possible words with given tiles on board/hand
+- find largest possible score
+*/
+
