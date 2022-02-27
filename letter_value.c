@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include "Console_IO_Utility.h"
+#include <ctype.h>
 
 //const
 const int BOARD_SIZE = 224;
@@ -7,19 +8,19 @@ const int BOARD_SIZE = 224;
 //prototypes
 int getPieceValue (char letter);
 
-int main()
+// int main()
 
-{
-    //initilize variables
-    int finalValue;
-    char userLetter;
+// {
+//     //initilize variables
+//     int finalValue;
+//     char userLetter;
 
-    userLetter = promptForCharacter("please enter your letter:");
-    finalValue = getPieceValue( userLetter );
-    printf("the final value is: %d", finalValue);
+//     userLetter = promptForCharacter("please enter your letter:");
+//     finalValue = getPieceValue( userLetter );
+//     printf("the final value is: %d", finalValue);
 
-    return 0;
-}
+//     return 0;
+// }
 
 int getPieceValue (char letter)
 {
@@ -34,6 +35,9 @@ int getPieceValue (char letter)
 
     // checks if letter is in the alpha1 array 
     //      returns point value (1)
+
+    letter = toupper(letter);
+
     for (int index = 0; index < 9; index++)
     {
         if (alpha1[index] == letter)
