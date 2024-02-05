@@ -10,7 +10,7 @@
 - set images for empty bonus squares
 - generate random tiles 
 - calculate word score (including bonus tiles)
-
+ddfsdfdfd
 
 - 
 - dictionary 
